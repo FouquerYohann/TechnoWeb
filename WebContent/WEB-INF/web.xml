@@ -1,0 +1,31 @@
+<!-- The mapping for the invoker servlet -->
+
+
+<web-app>
+	<servlet>
+		<servlet-name>OpServlet</servlet-name>
+		<servlet-class>service.OpServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	   <servlet-name>OpServlet</servlet-name>
+	   <url-pattern>/operation</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>service.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	   <servlet-name>LoginServlet</servlet-name>
+	   <url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>SignUpServlet</servlet-name>
+		<servlet-class>service.SignUpServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	   <servlet-name>SignUpServlet</servlet-name>
+	   <url-pattern>/signup</url-pattern>
+	</servlet-mapping>
+
+	
+</web-app>
