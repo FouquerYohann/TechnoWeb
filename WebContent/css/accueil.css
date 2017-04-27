@@ -1,0 +1,333 @@
+
+body{
+	background-color: #82C69B;
+}
+
+div#top{
+	background-color:#0C7600;
+	position:absolute;
+	top:0em;
+	left:0em;
+	height:8em;
+	width:100%;
+	
+}
+
+div#logo{
+	background-color:#0C7600;
+	position:absolute;
+	top:0px;
+	
+}
+div#main{
+	border-top-left-radius:40px;
+	background-color: #82C69B;
+	position:absolute;
+	left:15em;
+	z-index:1;
+	width:100%;
+	padding-bottom:2em;
+	top:6em;
+	box-shadow:0.5em 0.5em 15px #0A4D00 inset;
+	height:100%
+	
+}
+div#search{
+	position:absolute;
+	right:4em;
+	top:2.5em;
+}
+
+div#search input[type='image']{
+	position:relative;
+	top:0.5em;
+}
+
+div#connecte{
+	font-family: 'Lobster',cursive;
+	border-radius: 7px;
+	background-color:#82C69B;
+	position:absolute;
+	color:#2E5DF9;
+	padding:1.5em;
+	text-align: center;
+	height:1em;
+	width:20em;
+	left:10em;
+	top:0.5em;
+}
+
+div#connecte a:hover{
+	color:#819DFA;
+}
+div#connecte p{
+	position:absolute;
+	left:1em;
+	bottom:1em;
+	
+}
+
+div#connecte img{
+	position:absolute;
+	height:2.5em;
+	right:1em;
+	top:1em;
+}
+
+div.listview {
+	margin: 10px;
+	height:inherit;
+	overflow-y: auto; 
+}
+
+div.listview span{    
+	font-style: italic;
+}
+
+div.listview ul {
+
+	list-style-type: none;
+	width:200px;
+	padding-left: 10px;
+}
+
+div.listview h3{
+	font: bold 20px/1.5 Helvetica,Verdana,sans-serif;
+}
+
+li img{
+	float: left;
+	margin: 0 0 0 0;
+}
+
+li p{
+	font: 200 12px/1.5 Georgia,serif;
+}
+
+
+li {
+	padding: 10px;
+	overflow: auto;
+}
+
+li:hover{
+	background: #eee;
+	cursor: pointer;
+}
+
+div#left{
+	position:absolute;
+	top:8em;
+	left:0em;
+	width:15em;
+	height: 100%;
+	background-color: #0C7600;
+	box-shadow:0px 0.5em 15px #0A4D00;
+	border-bottom-right-radius:15px;
+
+}
+
+div#box-friend{
+	position:relative;
+}
+
+div#posts{
+	border-radius: 20px;
+	text-align:center;
+	position:absolute;
+	top:12em;
+	left:6em;
+	width:60em;
+	background-color:#66B8D1;
+	box-shadow:0.5em 0.5em 15px #0C5700,-0.5em -0.5em 15px #0C5700;
+}
+div#posts table{
+	margin:1em;
+}
+
+
+a{
+	padding:1em;
+	text-decoration:none;
+}
+
+p#date_author{
+	position:relative;
+	bottom:-1.5em;
+	font-size:10px;
+}
+
+
+
+ul#list-friend a:hover{
+	color:#6575DF;
+	width:100%;
+	height:5em;
+	margin:0px;
+}
+ul#friend-list a h3{
+	position:absolute;
+	top:100px;
+	margin-bottom:0px;
+}
+ul#list-friend{
+	width:10em;
+}
+
+ul#list-friend li{
+	background-color:#66B8D1;
+	border-radius: 5px;
+	margin-bottom:1em;
+}
+
+
+ul#list-friend p{
+	top:5em;
+	margin-top: 0px;
+}
+
+div#search_message{
+	position: absolute;
+	top:2em;
+	left:10em;
+	width:60%;
+}
+
+div#search_message input[type="submit"]{
+	background-image: url("../jpg/magnifying_glass.ico")
+	position:absolute;
+}
+
+input#recherche{
+	width:35em;
+}
+input#destinataire{
+	width:10em;
+}
+input#author{
+	width:10em;
+}
+
+
+div#posts td.date{
+	font-size: 8px;
+	width:5em;
+}
+div#posts td {
+	border-radius: 15px;
+	border-bottom: 2px solid green;
+	font-family: 'Candal',cursive;
+	text-align:center;
+}
+div#posts th{
+	font-family: 'Indie Flower', cursive;
+	border: 3px solid black;
+	border-radius: 4px;
+
+}
+img#button_like{
+	
+	width:1.5em;
+	height:1.5em;
+	position:relative;
+	bottom:0px;
+	left:0px;
+}
+img#button_dislike{
+	
+	width:1.5em;
+	height:1.5em;
+	position:relative;
+	bottom:0px;
+	right:0px;
+}
+p#p_score{
+	position:relative;
+	top:0em;
+}
+
+img#charger_box_friend{
+	background-image: url("../jpg/refresh_blue.ico");
+	width:2em;
+	height: 2em;
+}
+img.montrer_commentaire{
+	width:2em;
+	height:2em;
+}
+
+img.ajoute_commentaire{
+	width:2em;
+	height:2em;
+}
+img:hover{
+	cursor:pointer;
+}
+td.td_score{
+	width:4em;
+}
+
+input[type='text']{
+	border-radius: 5px;
+	background-color: #BAFFB2;
+	color:green;
+}
+
+
+tr.comm td{
+	display:none
+}
+div#pourtout{
+	position:relative;
+}
+div#pourtout textarea{
+	position:relative;
+	width:30em;
+	height:4em;
+	left:15em;
+	top:9em;
+	border-radius:5px;
+	
+}
+button#bouton_pourtout{
+	border-radius:10px;
+	position:relative;
+	left:15em;
+	top:7em;
+	height:4.5em;
+	width:4.5em;	
+}
+
+tr#les_commentaires_text td{
+	max-width:20em;
+	overflow:hidden;
+}
+
+div#div_profil{
+	width:30em;
+	height:20em;
+	position:absolute;
+	top:12em;
+	left:68em;
+	background-color: #66B8D1;
+	border-radius: 15px;
+	border: 1em solid black;
+	padding: 1em;
+}
+
+div#div_profil img{
+	height:17em;
+	width:17em;
+
+}
+
+div#div_profil p{
+	position: absolute;
+	left:20em;
+	top:5em;
+}
+div#div_profil h2{
+	position:absolute;
+	left:12.5em;
+	top:0em;
+}

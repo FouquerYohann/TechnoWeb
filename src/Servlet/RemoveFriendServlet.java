@@ -12,49 +12,37 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import service.UserServices;
+import Exception.ExcepStatic;
+import Exception.sessionDoesntExistException;
 import Exception.userDoesntExistException;
 
 public class RemoveFriendServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-	String log_usr = req.getParameter("log_usr");
-	String log_ami = req.getParameter("log_ami");
-	try {
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+		String key_session = req.getParameter("key_session");
+		int id_ami = Integer.parseInt(req.getParameter("id_ami"));
+		try {
 
-	    PrintWriter out = resp.getWriter();
-	    JSONObject json = UserServices.removeFriend(log_usr, log_ami);
-	    resp.getWriter().print(json.toString());
+			PrintWriter out = resp.getWriter();
+			JSONObject json = UserServices.removeFriend(key_session, id_ami);
+			resp.getWriter().print(json.toString());
+
+		} catch (JSONException e) {
+			try {
+				resp.getWriter().print("JsonException " + e.getMessage() + " " + ExcepStatic.JSONException);
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		} catch (IOException e) {
+			try {
+				resp.getWriter().print("IOException " + e.getMessage() );
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
 
 	}
-	catch (SQLException e) {
-	    e.printStackTrace();
-	}
-	catch (JSONException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	}
-	catch (IOException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	}
-	catch (InstantiationException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	}
-	catch (IllegalAccessException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	}
-	catch (ClassNotFoundException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	}
-	catch (userDoesntExistException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	}
-
-    }
 
 }

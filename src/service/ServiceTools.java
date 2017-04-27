@@ -12,7 +12,8 @@ public class ServiceTools {
 	
 	public static JSONObject ServiceRefused(String message, int code) throws JSONException{
 		JSONObject retour= new JSONObject();
-		retour.put(message, code);
+		retour.put("error",message);
+		retour.put("error_number", code);
 		return retour;
 	}
 	

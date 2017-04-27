@@ -12,5 +12,6 @@ public interface DBStatic {
 	public static String mysql_password="admin";
 	public static String mongoDB_host="132.227.201.129";
 	public static int mongoDB_port=27130;
-
+	public static String mongoDB_username="gr2_rudat_fouque";
+	
 }

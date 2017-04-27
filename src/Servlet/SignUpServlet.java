@@ -1,8 +1,6 @@
 package Servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,44 +9,67 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import Exception.ExcepStatic;
 import service.UserServices;
-import Exception.loginAlreadyExistException;
-import Exception.userDoesntExistException;
 
 public class SignUpServlet extends HttpServlet {
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse resp) {
-	String login = request.getParameter("login");
-	String password = request.getParameter("password");
-	String prenom = request.getParameter("prenom");
-	String nom = request.getParameter("nom");
-	try {
-	    PrintWriter out = resp.getWriter();
-	    JSONObject json = UserServices.createUser(login, password, prenom, nom);
-	    // resp.setContentType("text/plain");
-	    resp.getWriter().print(json.toString());
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse resp) {
+		// resp.setContentType("json");
+		String login = request.getParameter("login");
+		String password = request.getParameter("password");
+		String prenom = request.getParameter("prenom");
+		String nom = request.getParameter("nom");
+		try {
 
-	}
-	catch (SQLException e) {
-	    e.printStackTrace();
-	}
-	catch (JSONException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	}
-	catch (IOException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	}
-	catch (userDoesntExistException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	}
-	catch (loginAlreadyExistException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
+			JSONObject json = UserServices.createUser(login, password, prenom, nom);
+			resp.getWriter().print(json.toString());
+
+		}
+
+		catch (JSONException e) {
+			try {
+				resp.getWriter().print("JsonException " + e.getMessage() + " " + ExcepStatic.JSONException);
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		} catch (IOException e) {
+			try {
+				resp.getWriter().print("IOException " + e.getMessage());
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
 	}
 
-    }
+	protected void doPost(HttpServletRequest request, HttpServletResponse resp) {
+		resp.setContentType("json");
+		String login = request.getParameter("login");
+		String password = request.getParameter("password");
+		String prenom = request.getParameter("prenom");
+		String nom = request.getParameter("nom");
+		try {
+
+			JSONObject json = UserServices.createUser(login, password, prenom, nom);
+			resp.getWriter().print(json.toString());
+
+		}
+
+		catch (JSONException e) {
+			try {
+				resp.getWriter().print("JsonException " + e.getMessage() + " " + ExcepStatic.JSONException);
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		} catch (IOException e) {
+			try {
+				resp.getWriter().print("IOException " + e.getMessage());
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+	}
 }

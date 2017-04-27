@@ -7,8 +7,8 @@ import java.sql.Statement;
 
 import com.mongodb.MongoException;
 
-import Exception.loginAlreadyExistException;
 import Exception.sessionDoesntExistException;
+import Exception.loginAlreadyExistException;
 import Exception.userDoesntExistException;
 import service.UserServices;
 import service.UserTools;
@@ -45,7 +45,7 @@ public class DBTest {
 			//TODO! tester les userservice et usertools et database tools
 	    
 			
-			UserTools.insertSession("justina");
+			
 			//UserTools.checkSession("38fda8c3-ee3f-4bc9-b048-d9752c69db0d");
 			//UserTools.deleteSession("38fda8c3-ee3f-4bc9-b04-d9752c69db0d");
 			//UserTools.checkSession("38fd8c3-ee3f-4bc9-b048-d9752c69db0d");

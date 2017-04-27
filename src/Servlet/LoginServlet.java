@@ -12,44 +12,37 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import Exception.ExcepStatic;
+import Exception.wrongPasswordException;
 import service.UserServices;
 
 public class LoginServlet extends HttpServlet {
-    /**
-     * Servlet servant a gerer la connexion via login/password sur le serveur.
-     * 
-     * @param request
-     * @param resp
-     * @throws ServletException
-     * @throws IOException
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
-	String login = request.getParameter("login");
-	String password = request.getParameter("password");
-	try {
-	    PrintWriter out = resp.getWriter();
-	    JSONObject json = UserServices.login(login, password);
-	    resp.getWriter().print(json.toString());
+	/**
+	 * Servlet servant a gerer la connexion via login/password sur le serveur.
+	 * 
+	 * @param request
+	 * @param resp
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
+		String login = request.getParameter("login");
+		String password = request.getParameter("password");
+		try {
+			JSONObject json = UserServices.login(login, password);
+			resp.getWriter().print(json.toString());
+		}
+
+		catch (JSONException e) {
+			try {
+				resp.getWriter().print("JsonException " + e.getMessage());
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		} catch (IOException e) {
+			resp.getWriter().print("IOException " + e.getMessage());
+		}
+
 	}
-	catch (SQLException e) {
-	    e.printStackTrace();
-	}
-	catch (JSONException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	}
-	catch (InstantiationException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	}
-	catch (IllegalAccessException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	}
-	catch (ClassNotFoundException e) {
-	    // TODO Auto-generated catch block
-	    e.printStackTrace();
-	}
-    }
 }

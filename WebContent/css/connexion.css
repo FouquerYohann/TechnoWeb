@@ -1,0 +1,40 @@
+body{
+	background-color: #0C7600;
+}
+div#connect{
+	background-color: #58A94F;
+	padding:2em;
+	position:absolute;
+	left:40%;
+	top:20%;
+	border-width: 2px; 
+	border-radius: 10px;
+	border-style: solid;
+	height:12em;
+}
+div#connect:hover{
+	box-shadow: 2px 2px 5px black;
+	border-style: dotted;
+}
+div.ids{
+	padding:1em;
+}
+div.ids span{
+	width:30%;
+	text-align:center;
+	background-color: grey;
+	border-radius: 5px;
+	position:absolute;
+	left:1em;
+}
+div.ids input{
+	position:absolute;
+	right:1em;
+}
+div.buttons{
+	position:absolute;
+	bottom:1em;
+	left:27%;
+}
+
+
